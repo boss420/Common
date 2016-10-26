@@ -5,7 +5,7 @@
  * @email 383542899@qq.com
  * @web www.linglingtuan.com
  */
-namespace boss420\Common;
+namespace boss420\common;
 class AsynHandle {
     public $url = ''; //传入的完整请求url,包括"http://"或"https://"
     public $cookie = array(); //传入的cookie数组,须是键值对

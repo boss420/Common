@@ -6,6 +6,6 @@
  */
 header('Content-type: application/json');
 require_once "../src/AsynHandle.php";
-$oop = new \boss420\Common\AsynHandle();
+$oop = new \boss420\common\AsynHandle();
 $result = $oop->Get("https://www.udopay.com/index.php/Gateway/securepay");
 echo $result;
