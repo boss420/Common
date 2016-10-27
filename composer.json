@@ -8,7 +8,7 @@
     },
     "autoload": {
         "psr-4": {
-            "boss420\\Common\\": "src/"
+            "boss420\\common\\": "src/"
         }
     },
     "license": "MIT",
