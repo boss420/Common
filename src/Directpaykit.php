@@ -5,7 +5,7 @@
  * @email 383542899@qq.com
  * @web www.ipasspay.com
  */
-namespace boss420\udopay;
+namespace boss420\common;
 class Directpaykit {
 	private $mid; //商户ID
 	private $site_id; //网站ID
