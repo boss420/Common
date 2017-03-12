@@ -42,9 +42,9 @@ class Directpaykit {
 		//echo $result = $this->mid . $this->site_id . $post_arr['order_amount'] . $post_arr["order_currency"] . $this->api_key;exit;
 		$curlPost["hash_info"] = hash("sha256", $this->mid . $this->site_id . $post_arr["oid"] .
 			$post_arr['order_amount'] . $post_arr["order_currency"] . $this->api_key);
-		$curlPost["source_ip"] = $this->get_real_ip() . ""; //IP地址
+		$curlPost["source_ip"] = $post_arr['source_ip'] ?: $this->get_real_ip() . ""; //IP地址
 		$curlPost["source_url"] = $_SERVER['HTTP_REFERER'] ?: $_SERVER['HTTP_HOST']; //来源地址
-		$curlPost["gateway_version"] = "1.0"; //网关版本号
+		$curlPost["gateway_version"] = $post_arr['gateway_version'] ?: "1.0"; //网关版本号
 		$curlPost["mid"] = $this->mid; //商户ID
 		$curlPost["site_id"] = $this->site_id; //网站ID
 		$process_gateway = $this->domain . "/index.php/Gateway/securepay";
