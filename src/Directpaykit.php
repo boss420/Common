@@ -186,7 +186,12 @@ class Directpaykit {
 				}
 			}
 		}
-		return ($ip ? $ip : $_SERVER['REMOTE_ADDR']);
+		$real_ip = $ip ? $ip : $_SERVER['REMOTE_ADDR'];
+		if (filter_var($real_ip, FILTER_VALIDATE_IP)) {
+			return $real_ip;
+		} else {
+			return "127.0.0.1";
+		}
 	}
 
 	/**
