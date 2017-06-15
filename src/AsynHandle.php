@@ -160,7 +160,7 @@ class AsynHandle {
 		$this->post = $post;
 		$this->timeout = $timeout;
 
-		if (!$this->analyzeUrl()) {
+		if (!$this->analyzeUrl($sock_flag)) {
 			return $this->result;
 		}
 		$this->assHeader();
