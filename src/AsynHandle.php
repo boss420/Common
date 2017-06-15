@@ -50,7 +50,7 @@ class AsynHandle {
 			if ($sock_flag) {
 				$this->fop = fsockopen('ssl://' . $this->host, 443, $errno, $errstr, $this->timeout);
 			} else {
-				$this->fop = stream_socket_client('ssl://' . $this->host, 443, $errno, $errstr, $this->timeout);
+				$this->fop = stream_socket_client('ssl://' . $this->host.":443", $errno, $errstr, $this->timeout);
 
 			}
 			break;
@@ -58,7 +58,7 @@ class AsynHandle {
 			if ($sock_flag) {
 				$this->fop = fsockopen($this->host, $this->port, $errno, $errstr, $this->timeout);
 			} else {
-				$this->fop = stream_socket_client($this->host, $this->port, $errno, $errstr, $this->timeout);
+				$this->fop = stream_socket_client($this->host.":".$this->port, $errno, $errstr, $this->timeout);
 			}
 			break;
 		}
